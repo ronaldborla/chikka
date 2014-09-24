@@ -3,8 +3,8 @@ Chikka API SDK for PHP
 
 Chikka API PHP SDK (v.1.0)
 
-This reposity contains a PHP SDK for the [Chikka API](https://api.chikka.com/)
-To learn more about the API, please visit [https://api.chikka.com/docs/overview](https://api.chikka.com/docs/overview)
+This reposity contains a PHP SDK for the [Chikka API](https://api.chikka.com/).
+To learn more about the API, please visit [https://api.chikka.com/docs/overview](https://api.chikka.com/docs/overview).
 
 Usage
 -----
@@ -18,7 +18,7 @@ require('../src/Chikka.php');
 $credentials = array(
   'client_id' => 'your_client_id',
   'secret_key'=> 'your_secret_key',
-  'shortcode' => '2929xxxx'
+  'shortcode' => '29290xxxx'
 );
 
 // Instantiate Chikka (passing credentials)
@@ -47,9 +47,9 @@ if ($send->success()) {
 }
 ```
 
-To receive a message and reply
-Note: In your Chikka API Settings, you need to edit the "Message Receiver URL" and point it to this script
-Example: http://website.com/chikka/receive_message_and_reply.php
+To receive a message and reply.
+Note: In your Chikka API Settings, you need to edit the "Message Receiver URL" and point it to this script.
+Example: http://website.com/chikka/receive_message_and_reply.php.
 ```php
 // Require Chikka SDK file
 require('../src/Chikka.php');
@@ -58,7 +58,7 @@ require('../src/Chikka.php');
 $credentials = array(
   'client_id' => 'your_client_id',
   'secret_key'=> 'your_secret_key',
-  'shortcode' => '2929xxxx'
+  'shortcode' => '29290xxxx'
 );
 
 // Instantiate Chikka (passing credentials)
