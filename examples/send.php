@@ -28,7 +28,7 @@
   // If you don't want to specify a `message_id` as a 3rd parameter in the send() function,
   // A `message_id` is automatically generated (16 digits)
   // You can retrieve the `message_id` through the following
-  $messageId = $send->message->message_id;
+  $messageId = $send->msg->message_id;
 
   // Check if message was sent
   if ($send->success()) {

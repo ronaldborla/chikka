@@ -111,16 +111,16 @@
     /**
      * Message object
      */
-    protected $message;
+    protected $msg;
 
     /**
      * Get property
      */
     function __get($name)
     {
-      if ($name == 'message') {
-        // return message
-        return $this->message;
+      if ($name == 'msg') {
+        // return msg
+        return $this->msg;
       }
       // Return get
       return parent::__get($name);
@@ -146,12 +146,12 @@
     }
 
     /**
-     * Set message object
+     * Set msg object
      */
-    function setMessage(Chikka_Message $message)
+    function setMessage(Chikka_Message $msg)
     {
       // Set object
-      $this->message = $message;
+      $this->msg = $msg;
       // Return this object
       return $this;
     }
