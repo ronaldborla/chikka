@@ -6,6 +6,13 @@ Chikka API PHP SDK (v.1.0)
 This reposity contains a PHP SDK for the [Chikka API](https://api.chikka.com/).
 To learn more about the API, please visit [https://api.chikka.com/docs/overview](https://api.chikka.com/docs/overview).
 
+Requirements
+------------
+
+Requires PHP 5.4+
+
+Requires the [cURL Library for PHP](http://php.net/manual/en/book.curl.php).
+
 Usage
 -----
 

@@ -34,13 +34,13 @@
   // If you don't want to specify a `message_id` as a 5th parameter in the reply() function,
   // A `message_id` is automatically generated (16 digits)
   // You can retrieve the `message_id` through the following
-  $messageId = $send->msg->message_id;
+  $messageId = $reply->msg->message_id;
 
   // Check if message was sent
-  if ($send->success()) {
+  if ($reply->success()) {
 
     echo 'Reply successfully sent';
   } else {
     // Print error message
-    echo 'Reply not sent. ', $send->message;
+    echo 'Reply not sent. ', $reply->message;
   }
