@@ -48,6 +48,8 @@ if ($send->success()) {
 ```
 
 To receive a message and reply
+Note: In your Chikka API Settings, you need to edit the "Message Receiver URL" and point it to this script
+Example: http://website.com/chikka/receive_message_and_reply.php
 ```php
 // Require Chikka SDK file
 require('../src/Chikka.php');
@@ -76,4 +78,4 @@ $chikka->receiveMessage(function($message) {
 });
 ```
 
-To learn more about the usage of the SDK regarding replying to a message independently and receiving notifications, please refer to the [examples][examples]
+To learn more about the usage of the SDK regarding replying to a message independently and receiving notifications, please refer to the examples
