@@ -5,6 +5,8 @@
    * @author Ronald Borla
    * @copyright September 23, 2014
    * @package Chikka
+   * @version 1.0
+   * @repository https://github.com/ronaldborla/chikka
    * @dependencies cURL library for PHP
    */
 
