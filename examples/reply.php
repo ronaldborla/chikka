@@ -13,7 +13,7 @@
   $credentials = array(
     'client_id' => 'your_client_id',
     'secret_key'=> 'your_secret_key',
-    'shortcode' => '2929xxxx'
+    'shortcode' => '29290xxxx'
   );
 
   // Request ID is received from Chikka (when a user sends a message to your shortcode, 

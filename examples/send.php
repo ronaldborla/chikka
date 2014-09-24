@@ -11,7 +11,7 @@
   $credentials = array(
     'client_id' => 'your_client_id',
     'secret_key'=> 'your_secret_key',
-    'shortcode' => '2929xxxx'
+    'shortcode' => '29290xxxx'
   );
 
   // Instantiate Chikka (passing credentials)
