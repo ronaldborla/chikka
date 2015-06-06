@@ -1,6 +1,6 @@
 {
   "name": "ronaldborla/chikka",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Send and receive SMS using Chikka API",
   "keywords": ["ronaldborla", "chikka", "sms"],
   "license": "MIT",

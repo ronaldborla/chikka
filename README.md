@@ -1,7 +1,7 @@
 # Chikka API SDK for PHP
-## Chikka API PHP SDK (v.2.1.0)
+## Chikka API PHP SDK (v.2.1.1)
 
-This reposity contains a PHP SDK for the [Chikka API](https://api.chikka.com/).
+This repository contains a PHP SDK for the [Chikka API](https://api.chikka.com/).
 Chikka is an SMS service for local use in Philippines. It supports 3 mobile networks: Globe, Smart, and Sun Cellular.
 To learn more about the API, please visit [https://api.chikka.com/docs/overview](https://api.chikka.com/docs/overview)
 
@@ -11,7 +11,7 @@ To learn more about the API, please visit [https://api.chikka.com/docs/overview]
 Add the following lines in your `composer.json` file
 ```
 "require": {
-    "ronaldborla/chikka": "~2.1.0"
+    "ronaldborla/chikka": "~2.1.1"
 },
 ```
 
@@ -22,7 +22,7 @@ Although optional, this package will automatically use [Guzzle](https://github.c
 ```
 "require": {
     "guzzlehttp/guzzle": "~5.0",
-    "ronaldborla/chikka": "~2.1.0"
+    "ronaldborla/chikka": "~2.1.1"
 },
 ```
 
@@ -277,7 +277,7 @@ $short = $mobile->short();
 // Get international format: 639081234567
 $intl = $mobile->intl();
 
-// Get local format: 09087800765
+// Get local format: 09081234567
 $local = $mobile->local();
 
 // Get pretty format: (+63) 908-1234567
