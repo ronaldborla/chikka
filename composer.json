@@ -1,5 +1,5 @@
 {
-  "name": "borla/chikka",
+  "name": "ronaldborla/chikka",
   "version": "2.0.1",
   "description": "Send and receive SMS using Chikka API",
   "keywords": ["ronaldborla", "chikka", "sms"],
