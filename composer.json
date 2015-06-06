@@ -14,7 +14,6 @@
     "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
   },
   "require": {
-    "guzzlehttp/guzzle": "~5.0",
     "nesbot/carbon": "~1.0"
   },
   "autoload": {

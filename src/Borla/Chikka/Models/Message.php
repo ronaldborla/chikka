@@ -15,6 +15,7 @@ use Carbon\Carbon;
  */
 
 class Message extends Model {
+  
   /**
    * Message types
    */

@@ -57,7 +57,7 @@ class Receiver implements ConfigInterface {
       // Create new notification
       $this->notification = Loader::notification($post);
       // If shortcode doesn't match
-      if ($this->notification->shortcode != $this->confg->shortcode) {
+      if ($this->notification->shortcode != $this->config->shortcode) {
         // Unset notification
         unset($this->notification);
       }
