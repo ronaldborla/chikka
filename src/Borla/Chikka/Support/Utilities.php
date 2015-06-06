@@ -107,15 +107,18 @@ class Utilities {
     $extracted = [];
     // Loop through keys
     foreach ($keys as $key) {
-      // Set item
-      $item = isset($array[$key]) ? $array[$key] : null;
-      // If there's a callback
-      if (isset($callbacks[$key]) && is_callable($callbacks[$key])) {
-        // Call it
-        $item = call_user_func_array($callbacks[$key], [$item]);
+      // Add to extracted, only if it exists
+      if (array_key_exists($key, $array)) {
+        // Set item
+        $item = $array[$key];
+        // If there's a callback
+        if (isset($callbacks[$key]) && is_callable($callbacks[$key])) {
+          // Call it
+          $item = call_user_func_array($callbacks[$key], [$item]);
+        }
+        // Add to extracted
+        $extracted[$key] = $item;
       }
-      // Add to extracted
-      $extracted[$key] = $item;
     }
     // Return extracted
     return $extracted;
@@ -144,7 +147,7 @@ class Utilities {
    */
   static function executeCallback($callback, array $params = array()) {
     // If callback has @
-    if (strpos($callback, '@') !== false) {
+    if (is_string($callback) && strpos($callback, '@') !== false) {
       // Split
       $arrCallback = explode('@', $callback);
       // Set object

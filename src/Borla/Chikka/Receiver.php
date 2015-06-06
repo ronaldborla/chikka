@@ -80,10 +80,10 @@ class Receiver implements ConfigInterface {
     if ($this->hasMessage()) {
       // Execute callback passing the message
       $this->success = Utilities::executeCallback($callback, [
-                        // First parameter is instance of Sender
-                        Loader::sender($this->config), 
-                        // Second parameter is the message
+                        // First parameter is the message
                         $this->message,
+                        // Second optional parameter is instance of Sender
+                        Loader::sender($this->config), 
                       ]);
     }
     // Return self

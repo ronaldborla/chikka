@@ -3,17 +3,21 @@
 use Borla\Chikka\Base\Model;
 use Borla\Chikka\Models\Cost;
 
+use Borla\Chikka\Adapters\Timestamp\TimestampInterface;
+use Borla\Chikka\Adapters\Timestamp\TimestampTrait;
+
 use Borla\Chikka\Exceptions\InvalidAttribute;
 
 use Borla\Chikka\Support\Loader;
 use Borla\Chikka\Support\Utilities;
-use Carbon\Carbon;
 
 /**
  * Notification
  */
 
-class Notification extends Model {
+class Notification extends Model implements TimestampInterface {
+
+  use TimestampTrait;
 
   /**
    * Message types
@@ -33,6 +37,8 @@ class Notification extends Model {
       'id',
       'status',
       'credits_cost',
+      'credits',
+      'rb_cost',
       'cost',
       'timestamp',
     ], $data));
@@ -45,8 +51,9 @@ class Notification extends Model {
     // Listen to these attributes
     $listen = [
       'message_type'=> 'type',
-      'message_id'=> 'id',
-      'credits_cost'=> 'cost',
+      'message_id'  => 'id',
+      'credits_cost'=> 'credits',
+      'rb_cost'     => 'cost',
     ];
     // If set
     if (isset($listen[$name])) {
@@ -114,24 +121,19 @@ class Notification extends Model {
   }
 
   /**
-   * Cost
+   * Credits
    */
-  protected function setCostAttribute($value) {
+  protected function setCreditsAttribute($value) {
     // Return cost
     return ($value instanceof Cost) ? $value : Loader::cost($value);
   }
 
   /**
-   * Set timestamp
+   * Cost
    */
-  protected function setTimestampAttribute($value) {
-    // If nothing
-    if ( ! $value) {
-      // Creat new 
-      return new Carbon(null, $this->getTimezone());
-    }
-    // Use carbon
-    return ($value instanceof Carbon) ? $value : new Carbon($value, $this->getTimezone());
+  protected function setCostAttribute($value) {
+    // Return cost
+    return ($value instanceof Cost) ? $value : Loader::cost($value);
   }
 
 }

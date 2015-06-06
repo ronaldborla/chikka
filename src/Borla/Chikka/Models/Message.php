@@ -4,18 +4,22 @@ use Borla\Chikka\Base\Model;
 use Borla\Chikka\Models\Cost;
 use Borla\Chikka\Models\Mobile;
 
+use Borla\Chikka\Adapters\Timestamp\TimestampInterface;
+use Borla\Chikka\Adapters\Timestamp\TimestampTrait;
+
 use Borla\Chikka\Exceptions\InvalidAttribute;
 
 use Borla\Chikka\Support\Loader;
 use Borla\Chikka\Support\Utilities;
-use Carbon\Carbon;
 
 /**
  * Message
  */
 
-class Message extends Model {
-  
+class Message extends Model implements TimestampInterface {
+
+  use TimestampTrait;
+
   /**
    * Message types
    */
@@ -200,27 +204,6 @@ class Message extends Model {
   protected function setCostAttribute($value) {
     // Return cost
     return ($value instanceof Cost) ? $value : Loader::cost($value);
-  }
-
-  /**
-   * Set timestamp
-   */
-  protected function setTimestampAttribute($value) {
-    // If nothing
-    if ( ! $value) {
-      // Creat new 
-      return new Carbon(null, $this->getTimezone());
-    }
-    // Use carbon
-    return ($value instanceof Carbon) ? $value : new Carbon($value, $this->getTimezone());
-  }
-
-  /**
-   * Get timezone
-   */
-  protected function getTimezone() {
-    // Return
-    return 'UTC';
   }
 
   /**
