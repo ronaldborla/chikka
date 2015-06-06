@@ -25,6 +25,12 @@ class Notification extends Model implements TimestampInterface {
   const OUTGOING  = 1;
 
   /**
+   * Status
+   */
+  const SENT    = 1;
+  const FAILED  = 2;
+
+  /**
    * Constructor
    */
   function __construct(array $data) {
@@ -76,6 +82,33 @@ class Notification extends Model implements TimestampInterface {
   }
 
   /**
+   * Get statuses
+   */
+  static function statuses() {
+    // Return
+    return [
+      static::SENT    => 'sent',
+      static::FAILED  => 'failed',
+    ];
+  }
+
+  /**
+   * Sent
+   */
+  public function sent() {
+    // Return
+    return $this->status == static::SENT;
+  }
+
+  /**
+   * Failed
+   */
+  public function failed() {
+    // Return
+    return $this->status == static::FAILED;
+  }
+
+  /**
    * Set id
    */
   protected function setIdAttribute($value) {
@@ -89,6 +122,35 @@ class Notification extends Model implements TimestampInterface {
       // Return only first 32
       return substr($value, 0, 32);
     }
+  }
+
+  /**
+   * Set status
+   */
+  protected function setStatusAttribute($value) {
+    // If null
+    if ($value === null) {
+      // Return null
+      return null;
+    }
+    // If numeric
+    if (is_int($value) || is_numeric($value)) {
+      // If not valid
+      if (isset(static::statuses()[$value])) {
+        // Return int value
+        return (int) $value;
+      }
+    }
+    // Else
+    else {
+      // Find 
+      if (($status = array_search(strtolower($value), static::statuses())) !== false) {
+        // Return status
+        return $status;
+      }
+    }
+    // Throw error
+    throw new InvalidAttribute('Invalid status value: ' . $value);
   }
 
   /**

@@ -5,20 +5,10 @@
  */
 
 return [
-
-  /**
-   * Shortcode to use
-   */
+  // Shortcode to use
   'shortcode'=> 'YOUR_SHORTCODE',
-
-  /**
-   * Client ID
-   */
+  // Client ID
   'client_id'=> 'YOUR_CLIENT_ID',
-
-  /**
-   * Secret key
-   */
+  // Secret key
   'secret_key'=> 'YOUR_SECRET_KEY',
-
 ];

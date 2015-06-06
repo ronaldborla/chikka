@@ -207,6 +207,22 @@ class Message extends Model implements TimestampInterface {
   }
 
   /**
+   * Get content
+   */
+  protected function getContentAttribute() {
+    // Return message
+    return $this->message;
+  }
+
+  /**
+   * Set content
+   */
+  protected function setContentAttribute($value) {
+    // Set message as well
+    return $this->message = $value;
+  }
+
+  /**
    * Get message
    */
   public function getMessage() {
