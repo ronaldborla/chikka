@@ -1,0 +1,27 @@
+{
+  "name": "borla/chikka",
+  "version": "2.0.1",
+  "description": "Send and receive SMS using Chikka API",
+  "keywords": ["ronaldborla", "chikka", "sms"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ronald Borla",
+      "email": "ronald.borla@yahoo.com"
+    }
+  ],
+  "suggest": {
+    "guzzlehttp/guzzle": "Allows for implementation of the Guzzle HTTP client"
+  },
+  "require": {
+    "guzzlehttp/guzzle": "~5.0",
+    "nesbot/carbon": "~1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Borla\\Chikka\\": "src/Borla/Chikka"
+    }
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
