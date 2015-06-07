@@ -11,7 +11,7 @@ To learn more about the API, please visit [https://api.chikka.com/docs/overview]
 Add the following lines in your `composer.json` file
 ```
 "require": {
-    "ronaldborla/chikka": "dev-master"
+    "ronaldborla/chikka": "@dev"
 },
 ```
 
@@ -22,11 +22,11 @@ Although optional, this package will automatically use [Guzzle](https://github.c
 ```
 "require": {
     "guzzlehttp/guzzle": "~5.0",
-    "ronaldborla/chikka": "dev-master"
+    "ronaldborla/chikka": "@dev"
 },
 ```
 
-Please note to use "dev-master" instead of the stable release to get the most updated bug fixes. Updated stable release will be available in the future
+Please note to use "@dev" instead of the stable release to get the most updated bug fixes. Updated stable release will be available in the future
 
 ### Laravel 5
 
