@@ -199,6 +199,19 @@ class Message extends Model implements TimestampInterface {
   }
 
   /**
+   * Get cost
+   */
+  protected function getCostAttribute() {
+    // If there's no cost
+    if ( ! isset($this->attributes['cost'])) {
+      // Create
+      $this->attributes['cost'] = new Cost();
+    }
+    // Return cost
+    return $this->attributes['cost'];
+  }
+
+  /**
    * Cost
    */
   protected function setCostAttribute($value) {
