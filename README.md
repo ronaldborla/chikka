@@ -191,6 +191,8 @@ echo $chikka->receive($_POST)
         $message->content = 'Hello to you, too';
         // Set message id as null (to force the Message object to generate a new message id)
         $message->id = null;
+        // Set cost
+        $message->cost = 2.50;
         // Send reply
         $response = $sender->reply($message);
         
@@ -201,7 +203,7 @@ echo $chikka->receive($_POST)
     });
 ```
 
-Notice above that we now have `$sender` as the second parameter in our callback function. This is the `Sender` object that we need in order to execute the `reply()` function. The `reply()` function simply accepts a `Message` object as the first parameter. Since the `$message` passed on to the callback function already contains the mobile number of the sender as well as the unique `request id` from Chikka, then the `Sender` object will know where to send the reply. Take note that as per Chikka API specification, in order to identify the message to reply to, you will have to supply the `request_id` sent along in the POST data from Chikka
+Notice above that we now have `$sender` as the second parameter in our callback function. This is the `Sender` object that we need in order to execute the `reply()` function. The `reply()` function simply accepts a `Message` object as the first parameter. Since the `$message` passed on to the callback function already contains the mobile number of the sender as well as the unique `request id` from Chikka, then the `Sender` object will know where to send the reply. Take note that as per Chikka API specification, in order to identify the message to reply to, you will have to supply the `request_id` sent along in the POST data from Chikka. Additionally, you can also set the cost of the message using `->cost`. Any amount will automatically be adjusted to its valid form according to the carrier of the mobile number. By default, the cost is `FREE`
 
 ### Receiving and replying to an SMS in Laravel 5
 
@@ -247,6 +249,8 @@ class SmsController extends BaseController {
         $message->content = 'Hello to you, too';
         // Set message id as null (to force the Message object to generate a new message id)
         $message->id = null;
+        // Set cost
+        $message->cost = 2.50;
         // Send reply
         $response = $sender->reply($message);
     
