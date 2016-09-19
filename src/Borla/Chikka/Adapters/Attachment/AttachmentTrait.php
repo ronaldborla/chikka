@@ -21,7 +21,7 @@ trait AttachmentTrait {
   /**
    * Get attachment
    */
-  protected function getAttachmentsAttribute() {
+  public function getAttachmentsAttribute() {
     // Return
     if ( ! isset($this->attributes['attachments'])) {
       // Create
