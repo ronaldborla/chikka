@@ -12,7 +12,7 @@ trait TimestampTrait {
   /**
    * Set timestamp
    */
-  protected function setTimestampAttribute($value) {
+  public function setTimestampAttribute($value) {
     // If nothing
     if ( ! $value) {
       // Creat new 
@@ -25,7 +25,7 @@ trait TimestampTrait {
   /**
    * Get timezone
    */
-  protected function getTimezone() {
+  public function getTimezone() {
     // Return
     return 'UTC';
   }
